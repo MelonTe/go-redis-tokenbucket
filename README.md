@@ -19,7 +19,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/redis/go-redis/v9"
-	"github.com/MelonTe/go-redis-tokenbucket/ratelimit"
+	"github.com/MelonTe/go-redis-tokenbucket"
 	"time"
 )
 
@@ -105,7 +105,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/redis/go-redis/v9"
-	"github.com/MelonTe/go-redis-tokenbucket/ratelimit"
+	"github.com/MelonTe/go-redis-tokenbucket"
 	"time"
 )
 
