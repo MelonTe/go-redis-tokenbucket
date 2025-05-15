@@ -48,10 +48,11 @@ local allow = 0
 if tokens >= tokenRequest then
 	--允许请求，更新桶的状态
 	tokens = tokens - tokenRequest
-	--更新桶的时间戳
-	timestamp = timestamp + fillTokens * tokenGenerateRate
 	allow = 1
 end
+
+--更新桶的时间戳
+timestamp = timestamp + fillTokens * tokenGenerateRate
 
 --更新桶的状态
 redis.call("HSET",key,"tokens",tokens,"timestamp",timestamp)
