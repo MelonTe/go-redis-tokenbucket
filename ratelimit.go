@@ -50,11 +50,11 @@ if tokens >= tokenRequest then
 	tokens = tokens - tokenRequest
 	--更新桶的时间戳
 	timestamp = timestamp + fillTokens * tokenGenerateRate
-	--更新桶的状态
-	redis.call("HSET",key,"tokens",tokens,"timestamp",timestamp)
 	allow = 1
 end
 
+--更新桶的状态
+redis.call("HSET",key,"tokens",tokens,"timestamp",timestamp)
 redis.call("PEXPIRE",key,expires)
 --返回结果
 return allow
